@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --primary-blue: #304764; /* Azul oscuro del header */
+    --light-blue: #edf6ff; /* Azul claro del botón */
+    --accent-gold: #c39a3e; /* Dorado de la tipografía */
+    --text-dark: #333;
+    --text-light: #fff;
+    --border-grey: #ddd;
+    --card-bg: #fff;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #f0f2f5; /* Fondo general */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.top-bar {
+    width: 100%;
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end; /* Alinear a la derecha */
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+}
+
+.contact-link {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.language-selector span {
+    margin-right: 5px;
+}
+
+.language-selector i {
+    font-size: 0.7em;
+}
+
+.logo-section {
+    width: 100%;
+    background-color: var(--primary-blue); /* Mismo color del header */
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+.banjoseo-logo {
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+
+    /* La imagen en sí debe tener las letras blancas y la B coloreada */
+    filter: brightness(0) invert(1) drop-shadow(0 0 0 white); /* Esto puede necesitar ajustarse si el logo no es blanco */
+}
+
+/* Estilo para simular la "B" coloreada si el logo es una imagen con transparencia */
+/* Si el logo es un SVG, se puede manipular directamente con CSS */
+.banjoseo-logo {
+    float: left;
+    height: 2px; /* Ajusta el tamaño según el diseño */
+}
+/* Para que las letras sean blancas y la B tenga color, la imagen del logo debe estar diseñada así.
+   No se puede cambiar el color de partes específicas de una imagen PNG/JPG con CSS de forma simple.
+   Asumo que la imagen del logo "banjoseo-logo.png" ya tiene este diseño. */
+
+
+.container {
+    flex-grow: 1; /* Para que ocupe el espacio restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    width: 100%;
+    max-width: 900px; /* Ancho máximo del contenedor de login */
+    overflow: hidden; /* Asegura que la imagen no sobresalga */
+}
+
+.login-form-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form-section h2 {
+    color: var(--primary-blue);
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.input-group input {
+    width: calc(100% - 60px); /* Ancho del input menos padding y espacio para icono */
+    padding: 15px 20px 15px 50px;
+    border: 1px solid var(--border-grey);
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-blue);
+}
+
+.virtual-keyboard-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.virtual-keyboard-link {
+    display: block;
+    text-align: right;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-bottom: 25px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--light-blue);
+    color: var(--primary-blue); /* Texto del botón en azul */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #d0e7f7;
+}
+
+.links-section {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid var(--border-grey);
+    padding-top: 20px;
+}
+
+.links-section .link {
+    display: block;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.signup-text {
+    font-size: 0.9em;
+    color: var(--text-dark);
+}
+
+.signup-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.promo-section {
+    flex: 0.8; /* Ajusta el tamaño de la sección de la imagen */
+    background-color: #f7f7f7; /* Un color de fondo para la sección */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.promo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Coloca la imagen debajo del texto */
+    border-top-right-radius: 8px; /* Redondea la esquina de la imagen */
+    border-bottom-right-radius: 8px; /* Redondea la esquina de la imagen */
+}
+
+.promo-text {
+    color: var(--accent-gold); /* Texto del banner en dorado */
+    font-size: 1.7em;
+    font-weight: 700;
+    line-height: 1.3;
+    position: relative; /* Para que el texto esté encima de la imagen */
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para legibilidad */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.dots {
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* Puntos blancos semi-transparentes */
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--primary-blue); /* Punto activo azul */
+}
+
+.footer-section {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.nsb-logo {
+    margin-top: 20px;
+}
+
+.nsb-logo img {
+    height: 80px; /* Ajusta el tamaño del logo NSB */
+    opacity: 0.7; /* Para que se vea un poco más claro como en la imagen */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .promo-section {
+        height: 200px; /* Altura fija para móviles */
+        order: -1; /* Mueve la imagen arriba en móviles */
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 0;
+    }
+    .promo-image {
+        border-bottom-right-radius: 0;
+    }
+
+    .login-form-section {
+        padding: 30px;
+    }
+
+    .promo-text {
+        font-size: 1.4em;
+    }
+
+    .logo-section {
+        padding: 15px 0;
+    }
+
+    .banjoseo-logo {
+        height: px;
+    }
+}

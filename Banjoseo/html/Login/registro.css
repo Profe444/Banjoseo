@@ -1,0 +1,251 @@
+/* Variables de Color */
+:root {
+    --color-primary: #1e3a6a; /* Azul Oscuro del header */
+    --color-secondary: #007bff; /* Azul del botón */
+    --color-background: #f4f6f9; /* Fondo gris claro */
+    --color-white: #ffffff;
+    --color-text-dark: #333333;
+    --color-text-light: #fefefe;
+    --color-accent: #ffc107; /* Tono dorado/amarillo para acentos */
+}
+
+/* Estilos Globales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--color-primary);
+    padding: 10px 5%;
+    color: var(--color-white);
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    font-size: 0.9em;
+}
+
+.header-content .language i {
+    margin-left: 5px;
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo */
+.logo-container {
+    padding: 20px 0 40px;
+}
+
+.logo {
+    max-width: 150px; /* Ajusta según el tamaño de tu logo */
+}
+
+/* Contenedor del Formulario y Banner */
+.register-container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+
+/* --- Formulario de Registro (Izquierda) --- */
+.register-form-box {
+    flex: 1;
+    padding: 40px;
+    background-color: var(--color-white);
+}
+
+.form-title {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+.input-group input:focus {
+    border-color: var(--color-secondary);
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-group label strong {
+    font-weight: 500;
+    color: var(--color-secondary);
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.register-button:hover {
+    background-color: #0056b3; /* Tono más oscuro al pasar el mouse */
+}
+
+.register-button:active {
+    transform: scale(0.99);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+/* --- Banner de Información (Derecha) --- */
+.register-info-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary); /* Fondo azul oscuro */
+    color: var(--color-text-light);
+    padding: 40px;
+    text-align: center;
+}
+
+.info-logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.info-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.info-text {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.register-info-box ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+.register-info-box ul li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+.register-info-box ul li i {
+    color: var(--color-accent); /* Color dorado para el ícono */
+    margin-right: 10px;
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+        max-width: 450px;
+    }
+
+    .register-form-box,
+    .register-info-box {
+        padding: 30px;
+    }
+
+    .form-title {
+        font-size: 1.6em;
+    }
+
+    .logo-container {
+        padding: 10px 0 20px;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .info-title {
+        font-size: 1.3em;
+    }
+}
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--light-blue);
+    color: var(--color-white); /* Texto del botón en azul */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color:   #304764; /* Azul oscuro del header */
+    
+;
+}
