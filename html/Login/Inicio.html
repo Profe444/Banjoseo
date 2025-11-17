@@ -12,24 +12,26 @@
     <div class="app-container">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <img src="banjoseo3.PNG" alt="BANJOSEO" class="banlogo" style="width: 150px;" style="height: 100px;" 
-
-" >
-
+                <img src="banjoseo3.PNG" alt="BANJOSEO" class="banlogo" style="width: 150px; height: auto;">
             </div>
             <nav class="sidebar-nav">
                 <ul>
                     <li class="nav-item active"><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li class="nav-item"><a href="#"><i class="fas fa-wallet"></i> Mis Cuentas</a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-wallet"></i> Monedero</a></li>
                     <li class="nav-item"><a href="#"><i class="fas fa-credit-card"></i> Tarjetas</a></li>
                     <li class="nav-item"><a href="#"><i class="fas fa-chart-line"></i> Inversiones</a></li>
                     <li class="nav-item"><a href="#"><i class="fas fa-hand-holding-usd"></i> Créditos</a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-dice"></i> Casino</a></li>
+<li class="nav-item"><a href="#"><i class="fas fa-futbol"></i> Deportes</a></li>
+
                 </ul>
                 <div class="nav-section-title">Servicios</div>
                 <ul>
-                    <li class="nav-item"><a href="#"><i class="fas fa-users"></i> Atención al Cliente</a></li>
-                    <li class="nav-item"><a href="#"><i class="fas fa-shield-alt"></i> Seguros</a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-users"></i> Referidos </a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-shield-alt"></i> Seguridad</a></li>
                     <li class="nav-item"><a href="#"><i class="fas fa-exchange-alt"></i> Transferencias</a></li>
+                                       
+
                 </ul>
             </nav>
         </aside>
@@ -49,31 +51,28 @@
                     <a href="#" class="nav-icon"><i class="fas fa-question-circle"></i></a>
                     <a href="#" class="nav-link">Perfil</a>
                     <a href="#" class="nav-link">Contacto</a>
-                    <button class="btn-primary"><i class="fas fa-exchange-alt"></i> Transferir</button>
+                    <button class="btn-primary" id="openDepositModal"><i class="fas fa-exchange-alt"></i> Depositar</button>
                 </div>
             </nav>
 
             <section class="promotions-section">
                 <div class="promo-card">
                     <span class="promo-tag">Promoción</span>
-                    <h3>Cuenta de Ahorro Premium</h3>
-                    <p>¡Gana más con tus ahorros!</p>
+                    <h3>Plan de inversion basico</h3>
+                    <p>¡Gana un 30% de tu inversion en tan solo una semana !</p>
                     <button class="btn-secondary">Más Información</button>
-                    <img src="piggy-bank.png" alt="Cerdito Ahorro" class="promo-image">
                 </div>
                 <div class="promo-card">
                     <span class="promo-tag">Promoción</span>
-                    <h3>Crédito Hipotecario Flexible</h3>
-                    <p>$50,000 En trámites del bienio</p>
+                    <h3>Plan de inversion pro </h3>
+                    <p>¡Gana un 45% de tu inversion en tan solo dos semana !</p>
                     <button class="btn-secondary">Solicitar Ahora</button>
-                    <img src="home-credit.png" alt="Crédito Hipotecario" class="promo-image">
                 </div>
                 <div class="promo-card">
                     <span class="promo-tag">Promoción</span>
-                    <h3>Invierte Cripto Inteligente</h3>
-                    <p>Crecimiento asegurado a largo plazo</p>
+                    <h3>Plan premium</h3>
+                    <p>¡Gana un 60% de tu inversion en tan solo un mes !</p>
                     <button class="btn-secondary">Invertir</button>
-                    <img src="crypto-invest.png" alt="Inversión Cripto" class="promo-image">
                 </div>
             </section>
 
@@ -144,7 +143,8 @@
             </section>
         </main>
     </div>
-     <footer class="main-footer">
+
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-info">
                 <div class="footer-logo">
@@ -163,5 +163,85 @@
             <p class="copyright">&copy; 2025 BANJOSEO. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <div id="depositModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fas fa-wallet modal-icon"></i>
+                    <h2>Monedero</h2>
+                </div>
+                <span class="close-button" id="closeDepositModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-back-link">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Depositar</span>
+                </div>
+
+                <form class="deposit-form">
+                    <div class="form-group">
+                        <label for="moneda">Moneda</label>
+                        <div class="custom-select">
+                            <i class="fab fa-ethereum coin-icon"></i>
+                            <select id="moneda" name="moneda">
+                                <option value="USDT">USDT - USD Tether</option>
+                                <option value="BTC">BTC - Bitcoin</option>
+                                <option value="ETH">ETH - Ethereum</option>
+                            </select>
+                            <i class="fas fa-caret-down select-arrow"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="red">Red</label>
+                        <div class="custom-select">
+                            <select id="red" name="red">
+                                <option value="ETH">ETH</option>
+                                <option value="TRX">TRX</option>
+                                <option value="BSC">BSC</option>
+                            </select>
+                            <i class="fas fa-caret-down select-arrow"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <div class="address-input-group">
+                            <input type="text" id="direccion" name="direccion" value="0x3aa6107b2o76762c903593df782374e139cfb7cc" readonly>
+                            <button type="button" class="copy-button" onclick="navigator.clipboard.writeText(document.getElementById('direccion').value)"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="qr-code-container">
+                        <img src="qrbilletera.PNG" alt="Código QR de Depósito" class="qr-code">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="loader-dot"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Lógica simple para abrir y cerrar el modal
+        const modal = document.getElementById('depositModal');
+        const openBtn = document.getElementById('openDepositModal');
+        const closeBtn = document.getElementById('closeDepositModal');
+
+        openBtn.onclick = function() {
+            modal.style.display = "flex";
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
