@@ -1,0 +1,11 @@
+.sidebar {
+    height: 100vh;        /* Ocupa toda la pantalla */
+    min-height: 100%;     /* Por si el contenido es mayor */
+    display: flex;
+    flex-direction: column;
+}
+
+/* El NAV ocupa el espacio restante */
+.sidebar-nav {
+    flex: 1;              /* Empuja el sidebar hacia abajo */
+}

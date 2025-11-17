@@ -1,0 +1,449 @@
+/* Variables de Colores */
+:root {
+    --primary-color: #304764; /* Azul Oscuro (similar al header/login) */
+    --secondary-color: #637a92; /* Azul medio */
+    --accent-color: #ffc107; /* Amarillo (para resaltar acciones/botones) */
+    --dark-text: #333;
+    --light-text: #fff;
+    --background-light: #f4f4f4;
+}
+
+/* Estilos Generales y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #fff; /* Fondo blanco general */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* --- Botones --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    background-color: #ffeb3b;
+}
+
+/* --- Header / Navegación --- */
+.main-header {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajusta según el tamaño real de tu logo */
+    margin-right: 10px;
+    width: 250px;
+}
+
+.logo span {
+    color: var(--light-text);
+    font-size: 0.85em;
+    opacity: 0.7;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    margin-left: 20px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.header-actions .btn-login, .header-actions .btn-register {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.header-actions .btn-login {
+    background: none;
+    color: var(--light-text);
+    border: 1px solid var(--light-text);
+}
+
+.header-actions .btn-register {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+}
+
+.header-actions a:hover {
+    opacity: 0.8;
+}
+
+/* --- Sección Principal (Hero) --- */
+.hero-section {
+    background-color: var(--secondary-color); /* Fondo azul para el banner principal */
+    color: var(--light-text);
+    padding: 80px 0;
+}
+
+.hero-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 30%;
+}
+
+.hero-content h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
+}
+
+.hero-content h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.hero-image img {
+    max-width: 50%;
+    height: auto;
+    /* En un proyecto real, se usaría la imagen de Bitcoin/Flecha aquí */
+    /* Para el ejemplo, simulamos el espacio */
+    background-color: rgba(255, 255, 255, 0.1);
+    min-width: 300px;
+    min-height: 200px;
+    display: block;
+    right: 300px;
+    float: right;
+}
+
+/* --- Sección de Servicios (3 Columnas) --- */
+.services-section {
+    padding: 60px 0;
+    background-color: #fff; /* Fondo blanco */
+    text-align: center;
+}
+
+.services-section .container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.service-card {
+    flex: 1;
+    background-color: #e3f2fd; /* Un azul muy claro como fondo de tarjeta */
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.service-card i {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* --- Sección de Testimonios --- */
+.testimonials-section {
+    padding: 60px 0;
+    background-color: var(--background-light); /* Fondo gris claro para contraste */
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.testimonial-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 30%;
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent-color);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonial-card span {
+    display: block;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 30px 0 15px;
+    text-align: center;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer-logo span {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.footer-links a {
+    color: var(--light-text);
+    margin-left: 20px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.footer-social a {
+    color: var(--light-text);
+    font-size: 1.2em;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--accent-color);
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.75em;
+    opacity: 0.6;
+}
+
+/* --- Media Queries para Responsive Design (Opcional, pero recomendado) --- */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+    }
+    .header-actions {
+        margin-top: 10px;
+    }
+
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .services-section .container,
+    .testimonial-grid,
+    .footer-info {
+        flex-direction: column;
+    }
+
+    .service-card {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .testimonial-card {
+        margin-bottom: 20px;
+        max-width: 80%;
+    }
+    
+    .footer-links a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+/* ==================================== */
+/* 5. Sección de Sustentabilidad y Confianza */
+/* ==================================== */
+
+.sustainability-section {
+    background-color: #ffffff; /* Fondo blanco para contraste */
+    padding: 60px 0;
+}
+
+.sustainability-section .container {
+    max-width: 1100px; /* Un poco más amplio para el contenido detallado */
+}
+
+.sust-card {
+    background-color: #f7f9fc; /* Fondo claro para la tarjeta */
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.sust-card h2 {
+    color: #007bff; /* Color principal para la pregunta */
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.sust-answer .intro-answer {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.sust-answer .intro-answer strong {
+    color: #007bff;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.pillar {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pillar i {
+    font-size: 2.5em;
+    color: #28a745; /* Color verde para iconos (simboliza crecimiento) */
+    margin-bottom: 15px;
+}
+
+.pillar h4 {
+    font-size: 1.2em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.pillar p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.conclusion-answer {
+    font-size: 1.05em;
+    color: #555;
+    line-height: 1.6;
+    padding-top: 20px;
+    border-top: 3px solid #007bff; /* Línea separadora azul */
+    font-style: italic;
+    text-align: center;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .sust-card {
+        padding: 30px 20px;
+    }
+
+    .sust-card h2 {
+        font-size: 1.8em;
+    }
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+}

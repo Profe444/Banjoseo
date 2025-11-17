@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANJOSEO - Inicio</title>
+
+    <link rel="stylesheet" href="planbasico.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Se cargará automáticamente -->
+      
+        <div id="sidebar"></div>
+                       
+
+
+        <main class="main-content">
+<div id="header"></div>
+            <!-- Se cargará automáticamente -->
+
+            <!-- AQUÍ SIGUE TODO TU CONTENIDO PRINCIPAL -->
+
+            <section class="promotions-section">
+                <!-- ...
+                 
+                
+                
+                
+                
+                -->
+            </section>
+
+            <section class="search-filter-section">
+         <div class="main-content">
+    <div class="promo-banner">
+        <span class="tag">Promoción</span>
+        <h1>Plan de inversión básico</h1>
+        <p>¡Gana 30% de tu inversión en tan solo una semana!</p>
+    </div>
+
+    <div class="content-cards">
+        <div class="card plan-details">
+            <h2>Detalles del Plan</h2>
+            <ul>
+                <li><span>Duración:</span> 7 días</li>
+                <li><span>Ganancia Total:</span> 30%</li>
+                <li><span>Mínimo de Inversión:</span> $14 USD</li>
+                <li><span>Retorno Diario:</span> $145 MXN (por 7 días)</li>
+                <li><span>Capital + Ganancia:</span> Al finalizar los 7 días</li>
+            </ul>
+        </div>
+
+        <div class="card start-investment">
+            <h2>Iniciar Inversión</h2>
+            <label for="investment-amount">Monto a Invertir (USD)</label>
+            <div class="input-group">
+                <input type="number" id="investment-amount" value="14.00" min="14" step="0.01">
+                <span>Mín: $14</span>
+            </div>
+            <button class="btn-primary">Invertir Ahora</button>
+            <p class="terms-text">Unete a este proyecto e incrementa tus ingresos </p>
+        </div>
+    </div>
+    
+    <div class="frequent-questions-section">
+       
+        <div class="faq-grid">
+            
+            <div class="faq-card investment-progress-card">
+                <h3>Progreso de  Inversión (Día 3 de 7)</h3>
+                
+                <div class="progress-details">
+                    <div class="stat">
+                        <span class="label">Inversión Inicial:</span>
+                        <span class="value">$14.00 USD</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Total Recuperado:</span>
+                        <span class="value recovered-amount">$6.50 USD</span>
+                    </div>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 46%;">
+                        <span class="progress-text">46% Rec.</span>
+                    </div>
+                </div>
+                
+                <p class="summary">Recibiste tu retorno de $145 MXN hoy. ¡Faltan 4 días para tu ganancia total del 30%!</p>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+
+    <!-- Footer cargado dinámicamente -->
+    <div id="footer"></div>
+
+    <script>
+        // Cargar partes externas (header, sidebar, footer)
+        async function loadComponent(id, file) {
+            const element = document.getElementById(id);
+            const response = await fetch(file);
+            element.innerHTML = await response.text();
+        }
+
+        loadComponent("header", "header.html");
+        loadComponent("sidebar", "sidebar.html");
+        loadComponent("footer", "footer.html");
+    </script>
+
+</body>
+</html>
