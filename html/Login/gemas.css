@@ -21,26 +21,28 @@ body {
 }
 
 .game-container {
-    display: flex;
+    display: flex; /* En PC: Panel y Tablero en fila */
     background-color: var(--bg-dark);
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    width: 900px; /* Ancho total del juego */
-    max-width: 95%;
+    width: 900px; /* Ancho total del juego para PC */
+    max-width: 95%; /* Asegura que no desborde en PC pequeñas */
     margin-bottom: 50px; /* Espacio para el footer */
 }
 
 /* --- Panel de Control (Aside) --- */
 .control-panel {
-    width: 300px;
+    width: 300px; /* Ancho fijo para PC */
     padding: 20px;
-    background-color: #212938; /* Ligeramente más oscuro que el fondo general */
+    background-color: #212938; 
     border-right: 1px solid var(--border-color);
 }
 
 .tabs {
     display: flex;
     margin-bottom: 20px;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .tab-button {
@@ -50,12 +52,13 @@ body {
     border: none;
     padding: 10px 0;
     cursor: pointer;
+    transition: background 0.2s;
+    font-weight: bold;
     opacity: 0.7;
-    transition: opacity 0.2s;
 }
 
 .tab-button.active {
-    background: #445672;
+    background: var(--bg-dark);
     opacity: 1;
 }
 
@@ -78,7 +81,7 @@ body {
     background: var(--bg-light);
     border-radius: 4px;
     overflow: hidden;
-        background-color: var(--bg-dark);
+    background-color: var(--bg-dark);
 
 }
 
@@ -148,12 +151,12 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columnas de igual ancho */
-    grid-template-rows: repeat(5, 1fr);   /* 5 filas de igual alto */
-    gap: 10px; /* Espacio entre las casillas */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
     width: 100%;
-    max-width: 500px; /* Limitar el tamaño del tablero */
-    aspect-ratio: 1 / 1; /* Asegurar que el tablero sea cuadrado */
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
 }
 
 .cell {
@@ -161,7 +164,7 @@ body {
     border-radius: 6px;
     height: auto;
     width: 100%;
-    padding-top: 100%; /* Truco para hacer las celdas cuadradas */
+    padding-top: 100%;
     position: relative;
     cursor: pointer;
     transition: background-color 0.1s;
@@ -204,42 +207,65 @@ body {
     font-weight: bold;
     opacity: 0.5;
 }
+
 /* --- GESTIÓN DE VISIBILIDAD DE PANELES --- */
 
-/* Clase para ocultar elementos que no deben verse */
 .hidden {
-    display: none !important; /* !important asegura que se aplique */
+    display: none !important;
 }
 
-/* --- ESTILOS DE PESTAÑAS MEJORADOS --- */
+/* ================================================= */
+/* 🧩 MEDIA QUERY: Estilos para Móviles (Max 768px) */
+/* ================================================= */
 
-.tabs {
-    display: flex;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    overflow: hidden; /* Esto ayuda a que los botones se vean como una unidad */
-}
+@media screen and (max-width: 768px) {
 
-.tab-button {
-    flex-grow: 1;
-    background: #374760; /* Color de fondo normal */
-    color: var(--text-color);
-    border: none;
-    padding: 10px 0;
-    cursor: pointer;
-    transition: background 0.2s;
-    font-weight: bold;
-    opacity: 0.7;
-}
+    /* 1. Contenedor Principal: Cambiar de Fila a Columna */
+    .game-container {
+        /* Los elementos se apilan verticalmente en el móvil */
+        flex-direction: column; 
+        width: 100%; 
+        max-width: 100%;
+        box-shadow: none;
+        margin-bottom: 70px;
+    }
 
-.tab-button.active {
-    background: var(--bg-dark); /* Fondo oscuro para la pestaña activa */
-    opacity: 1;
-    /* Si var(--bg-dark) no está definido, usa #212938 */
-}
+    /* 2. Panel de Control: Ocupar todo el ancho y cambiar orden */
+    .control-panel {
+        width: 100%;
+        padding: 15px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color); /* Separación visual en vertical */
+        order: 1; /* Se muestra primero arriba */
+    }
 
-/* Asegurar que los contenedores de los controles ocupen espacio */
-.manual-controls,
-.automatic-controls {
-    transition: opacity 0.3s;
+    /* 3. Tablero de Juego: Ocupar todo el ancho y cambiar orden */
+    .game-board {
+        width: 100%;
+        padding: 15px;
+        order: 2; /* Se muestra segundo debajo */
+    }
+    
+    /* 4. Tablero de Celdas: Asegurar que se escale */
+    .grid-container {
+        width: 100%; 
+        max-width: 400px; /* Limite para que no se vea gigantesco en tablets */
+        margin: 0 auto; /* Centrar el tablero horizontalmente */
+        gap: 8px;
+    }
+    
+    /* 5. Footer: Ajustar el tamaño para el móvil */
+    .game-footer {
+        padding: 10px 10px;
+        font-size: 0.9em;
+    }
+
+    .footer-left button {
+        font-size: 1.2em; 
+        margin-right: 5px;
+    }
+
+    .verification-button {
+        padding: 6px 10px;
+    }
 }
