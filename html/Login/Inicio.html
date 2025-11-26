@@ -8,6 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<script>
+async function verificarSesion() {
+    const { data } = await supabase.auth.getSession();
+
+    if (!data.session) {
+        window.location.href = "login.html";
+    }
+}
+
+verificarSesion();
+</script>
 <body>
     <div class="app-container">
         <aside class="sidebar">
@@ -19,7 +30,7 @@
                     <li class="nav-item active"><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
                     <li class="nav-item"><a href="#"><i class="fas fa-wallet"></i> Monedero</a></li>
                     <li class="nav-item"><a href="#"><i class="fas fa-credit-card"></i> Tarjetas</a></li>
-                    <li class="nav-item"><a href="#"><i class="fas fa-chart-line"></i> Inversiones</a></li>
+                    <li  class="nav-item"><a href="#"><i class="fas fa-chart-line"></i> Inversiones</a></li>
                     <li class="nav-item"><a href="#"><i class="fas fa-hand-holding-usd"></i> Créditos</a></li>
                     <li class="nav-item"><a href="#"><i class="fas fa-dice"></i> Casino</a></li>
 <li class="nav-item"><a href="#"><i class="fas fa-futbol"></i> Deportes</a></li>
@@ -99,11 +110,13 @@
                     </div>
                 </div>
                 <div class="product-grid">
+                    <a href="gemas.html">
                     <div class="product-card">
-                        <img src="rocket-launch.png" alt="Producto 1" class="product-image">
+                        <img src="gemas.jpg" alt="Producto 1" class="product-image">
                         <p class="product-name">Cuenta Joven</p>
                         <span class="product-tag">START ORIGINAL</span>
                     </div>
+                </a>
                     <div class="product-card">
                         <img src="diamond.png" alt="Producto 2" class="product-image">
                         <p class="product-name">Fondo Mutuo</p>
@@ -243,5 +256,8 @@
             }
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="login.js"></script>
 </body>
 </html>

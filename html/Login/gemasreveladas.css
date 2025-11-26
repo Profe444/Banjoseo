@@ -1,0 +1,80 @@
+/* --- Estilos para Celdas Reveladas --- */
+
+/* Estilo base para todas las celdas después de hacer clic */
+.cell.revealed {
+    /* Deshabilita clics en celdas ya reveladas */
+    pointer-events: none; 
+    
+    /* Configuración para centrar el ícono (💎 o 💣) */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em; /* Tamaño del ícono */
+    font-weight: bold;
+    color: white; 
+    
+    /* Anula el truco de padding-top para centrado de contenido */
+    padding-top: 0; 
+}
+
+/* 🟢 GEMA ENCONTRADA (Gem-Found) */
+.cell.gem-found {
+    background-color: #38b258; /* Un verde vibrante para indicar éxito */
+    /* Puedes añadir una sombra o animación si quieres, ej: */
+    box-shadow: 0 0 15px rgba(56, 178, 88, 0.7);
+}
+
+/* 🔴 MINA ENCONTRADA (Mine) */
+.cell.mine {
+    background-color: #e54848; /* Color rojo para indicar la pérdida */
+    /* Puedes añadir una sombra o animación si quieres, ej: */
+    box-shadow: 0 0 15px rgba(229, 72, 72, 0.7);
+}
+
+
+/* --- Estilos Adicionales Necesarios por JS --- */
+
+/* Estas clases se usan cuando el juego termina (endGame) */
+
+.cell.mine-revealed {
+    background-color: #555555; /* Gris oscuro para minas que no se tocaron */
+    color: #cccccc; /* Letra gris más clara */
+}
+
+.cell.gem-revealed {
+    background-color: #4a638b; /* Azul oscuro para gemas que no se abrieron */
+    color: white;
+}
+
+/* Estilo para el botón de Cobro/Cashout */
+.bet-button.cashout {
+    background-color: #ff9900; /* Naranja/Amarillo para indicar la opción de cobrar */
+    color: white;
+}
+/* Agrega esto a gemas.css */
+
+.hidden {
+    display: none !important;
+}
+
+/* Estilos de pestañas para que se vean como un solo componente */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    flex-grow: 1;
+    background: #374760; /* Fondo inactivo */
+    color: white;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.tab-button.active {
+    opacity: 1;
+    background: #212938; /* Fondo activo, ajusta al color de tu tema */
+}

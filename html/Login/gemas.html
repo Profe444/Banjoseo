@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mines - Clon Básico</title>
+    <link rel="stylesheet" href="gemas.css">
+    <link rel="stylesheet" href="gemasreveladas.css">
+    <script src="gemas.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <aside class="control-panel">
+            <div class="tabs">
+                <button class="tab-button active" data-mode="manual">Manual</button>
+                <button class="tab-button" data-mode="auto">Automático</button>
+            </div>
+
+            <div class="manual-controls">
+                <div class="input-group">
+                    <label for="bet-amount">Monto de Apuesta</label>
+                    <div class="input-field">
+                        <input type="text" id="bet-amount" value="0.00000000">
+                        <div class="actions">
+                            <button data-action="half">1/2</button>
+                            <button data-action="double">2x</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="mines">Minas</label>
+                    <select id="mines">
+                        <option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="gems">Gemas</label>
+                    <p class="gem-count">22</p>
+                </div>
+
+                <button class="bet-button">Apuesta</button>
+
+                <div class="results">
+                    <p>Seleccionar al azar</p>
+                    <label>Ganancia total (1.00x)</label>
+                    <p class="total-win">0.00000000</p>
+                </div>
+            </div>
+            <div class="automatic-controls hidden">
+                 <div class="input-group">
+                    <label for="auto-bet-amount">Monto de Apuesta</label>
+                    <div class="input-field">
+                        <input type="text" id="auto-bet-amount" value="0.00000000">
+                        <div class="actions">
+                            <button data-action="half">1/2</button>
+                            <button data-action="double">2x</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="auto-mines">Minas</label>
+                    <select id="auto-mines">
+                        <option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="auto-target-gems">Objetivo de Gemas (Cobrar al encontrar)</label>
+                    <input type="number" id="auto-target-gems" value="3" min="1" max="24">
+                </div>
+
+                <div class="input-group">
+                    <label for="num-bets">Número de Apuestas (0 = ∞)</label>
+                    <input type="number" id="num-bets" value="0" min="0"> 
+                </div>
+
+                <button class="auto-bet-button">Empezar Auto-apuesta</button>
+            </div>
+            </aside>
+
+        <main class="game-board">
+            <div class="grid-container">
+            </div>
+        </main>
+    </div>
+
+    <footer class="game-footer">
+        <div class="footer-left">
+            <button><i class="icon-settings">⚙️</i></button>
+            <button><i class="icon-history">📄</i></button>
+            <button><i class="icon-graph">📈</i></button>
+        </div>
+        <div class="footer-center">
+            <span>Stake</span>
+        </div>
+        <div class="footer-right">
+            <button class="verification-button">Verificación</button>
+        </div>
+    </footer>
+</body>
+</html>
