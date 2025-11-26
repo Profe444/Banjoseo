@@ -14,6 +14,10 @@
     --color-navbar-bg: #ffffff; /* Fondo de la navbar superior */
     --color-card-bg: #ffffff;
     --color-promo-tag: #e0e0e0; /* Color del tag "Promoción" */
+
+    /* Variables Específicas del Modal/Dark (Aseguradas para consistencia) */
+    --color-dark-blue: #162234; 
+    --color-accent: #00bfff;
 }
 
 /* Estilos Globales */
@@ -43,12 +47,13 @@ a {
 
 /* --- Sidebar Izquierdo --- */
 .sidebar {
-    width: 250px;
+    width: 250px; /* Ancho de escritorio */
     background-color: var(--color-sidebar-bg);
     color: var(--color-text-light);
     padding: 20px 0;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0; /* Evita que el sidebar se encoja */
+    flex-shrink: 0;
+    transition: width 0.3s; /* Transición para el colapso */
 }
 
 .sidebar-header {
@@ -56,9 +61,9 @@ a {
     text-align: center;
 }
 
-.sidebar-logo {
-    max-width: 120px;
-    filter: brightness(0) invert(1); /* Para hacer el logo blanco si es oscuro */
+.banlogo {
+    width: 150px;
+    height: auto;
 }
 
 .sidebar-nav ul {
@@ -91,8 +96,8 @@ a {
 .nav-item.active a {
     background-color: var(--color-sidebar-item-hover);
     color: var(--color-text-light);
-    border-left: 4px solid var(--color-secondary); /* Barra azul para activo */
-    padding-left: 16px; /* Ajusta el padding para la barra */
+    border-left: 4px solid var(--color-secondary);
+    padding-left: 16px;
 }
 
 .nav-item.active a {
@@ -130,43 +135,10 @@ a {
     gap: 5px;
 }
 
-.balance-display i {
-    color: var(--color-text-medium);
-}
-
-.currency-value {
-    font-weight: 500;
-}
-
-.currency-code {
-    color: var(--color-text-medium);
-}
-
 .navbar-right {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.nav-icon {
-    font-size: 1.2em;
-    color: var(--color-text-medium);
-    transition: color 0.2s;
-}
-
-.nav-icon:hover {
-    color: var(--color-primary);
-}
-
-.nav-link {
-    font-size: 0.9em;
-    color: var(--color-text-dark);
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.nav-link:hover {
-    color: var(--color-secondary);
 }
 
 .btn-primary {
@@ -206,54 +178,6 @@ a {
     min-height: 160px;
 }
 
-.promo-tag {
-    background-color: var(--color-promo-tag);
-    color: var(--color-text-medium);
-    font-size: 0.75em;
-    padding: 4px 8px;
-    border-radius: 4px;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-}
-
-.promo-card h3 {
-    margin-top: 30px;
-    font-size: 1.2em;
-    color: var(--color-primary);
-    margin-bottom: 5px;
-}
-
-.promo-card p {
-    font-size: 0.9em;
-    color: var(--color-text-medium);
-    margin-bottom: 15px;
-}
-
-.promo-card .btn-secondary {
-    background-color: transparent;
-    border: 1px solid var(--color-secondary);
-    color: var(--color-secondary);
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 0.85em;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.promo-card .btn-secondary:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-text-light);
-}
-
-.promo-card .promo-image {
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    max-height: 100px; /* Ajusta el tamaño de la imagen */
-    opacity: 0.8;
-}
-
 /* --- Sección de Búsqueda y Filtros --- */
 .search-filter-section {
     padding: 0 30px 30px;
@@ -269,42 +193,10 @@ a {
     margin-bottom: 20px;
 }
 
-.search-bar i {
-    color: var(--color-text-medium);
-    margin-right: 10px;
-}
-
-.search-bar input {
-    border: none;
-    outline: none;
-    flex-grow: 1;
-    font-size: 0.95em;
-    padding: 5px 0;
-}
-
 .filters {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-}
-
-.filter-item {
-    background-color: var(--color-card-bg);
-    color: var(--color-text-medium);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.85em;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.filter-item:hover {
-    background-color: var(--color-background-light);
-    color: var(--color-primary);
 }
 
 .filter-item.active {
@@ -318,37 +210,14 @@ a {
     padding: 0 30px 30px;
 }
 
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.section-header h2 {
-    font-size: 1.5em;
-    color: var(--color-primary);
-}
-
-.navigation-arrows i {
-    font-size: 1.2em;
-    color: var(--color-text-medium);
-    margin-left: 15px;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.navigation-arrows i:hover {
-    color: var(--color-primary);
-}
-
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajusta el ancho de las tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 15px;
 }
 
 .product-card {
+    /* ... (otros estilos de tarjeta) */
     background-color: var(--color-card-bg);
     border-radius: 10px;
     padding: 15px;
@@ -363,154 +232,24 @@ a {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
 .product-card .product-image {
-    max-width: 60px; /* Tamaño de la imagen del producto */
+    max-width: 60px;
     height: auto;
     margin-bottom: 10px;
 }
 
-.product-card .product-name {
-    font-size: 0.9em;
-    font-weight: 500;
-    color: var(--color-primary);
-    margin-bottom: 5px;
-}
-
-.product-card .product-tag {
-    font-size: 0.7em;
-    color: var(--color-text-medium);
-    opacity: 0.7;
-}
-
-/* --- Responsividad --- */
-@media (max-width: 1024px) {
-    .sidebar {
-        width: 200px;
-    }
-
-    .navbar-right {
-        gap: 15px;
-    }
-
-    .promotions-section {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 80px; /* Sidebar colapsado */
-        padding: 15px 0;
-    }
-
-    .sidebar-header {
-        padding: 0 10px 20px;
-    }
-
-    .sidebar-logo {
-        max-width: 60px;
-          display: flex;
-    align-items: center;
-        
-        
-        /* Logo más pequeño en sidebar colapsado */
-    }
-    .banlogo{
-height: 10px;
-
-    }
-
-    .sidebar-nav ul li a {
-        justify-content: center; /* Centra íconos */
-        padding: 10px 0;
-    }
-
-    .sidebar-nav ul li a span {
-        display: none; /* Oculta el texto */
-    }
-
-    .nav-section-title {
-        display: none;
-    }
-
-    .nav-item a i {
-        margin-right: 0;
-    }
-
-    .nav-item:hover a,
-    .nav-item.active a {
-        border-left: none;
-        border-bottom: 4px solid var(--color-secondary); /* Barra abajo para activo */
-        padding-left: 0;
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 15px 20px;
-    }
-
-    .navbar-left, .navbar-right {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .promotions-section {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-        padding: 20px;
-    }
-
-    .search-filter-section,
-    .featured-products-section {
-        padding: 0 20px 20px;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .sidebar {
-        display: none; /* Ocultar sidebar en móviles muy pequeños */
-    }
-
-    .app-container {
-        flex-direction: column;
-    }
-
-    .navbar-right .nav-link {
-        display: none; /* Ocultar enlaces de texto para ahorrar espacio */
-    }
-    
-    .navbar-right {
-        justify-content: space-around;
-        gap: 10px;
-    }
-
-    .btn-primary {
-        padding: 8px 15px;
-        font-size: 0.8em;
-    }
-
-    .promo-card h3 {
-        font-size: 1.1em;
-    }
-
-    .promo-card p {
-        font-size: 0.85em;
-    }
-}
+/* --- Footer Principal --- */
 .main-footer {
     background-color: var(--color-sidebar-bg);
     color: white;
     padding: 30px 0 15px;
     text-align: center;
+}
+
+.main-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .footer-info {
@@ -522,143 +261,41 @@ height: 10px;
     margin-bottom: 15px;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-}
-
-.footer-logo img {
-    height: 30px;
-    margin-right: 10px;
-}
-
-.footer-logo span {
-    font-size: 0.8em;
-    opacity: 0.7;
-}
-
 .footer-links a {
-    color: var(--light-text);
+    color: var(--color-text-light);
     margin-left: 20px;
     font-size: 0.9em;
     opacity: 0.8;
 }
 
-.footer-social a {
-    color: var(--light-text);
-    font-size: 1.2em;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
+/* --- ESTILOS DEL MODAL DE DEPÓSITO --- */
 
-.footer-social a:hover {
-    color: var(--accent-color);
-}
-
-.copyright {
-    margin-top: 15px;
-    font-size: 0.75em;
-    opacity: 0.6;
-}
-
-/* --- Media Queries para Responsive Design (Opcional, pero recomendado) --- */
-@media (max-width: 768px) {
-    .main-header .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-links a {
-        margin: 0 10px;
-    }
-    .header-actions {
-        margin-top: 10px;
-    }
-
-    .hero-section .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .services-section .container,
-    .testimonial-grid,
-    .footer-info {
-        flex-direction: column;
-    }
-
-    .service-card {
-        margin-bottom: 20px;
-        max-width: 100%;
-    }
-
-    .testimonial-card {
-        margin-bottom: 20px;
-        max-width: 80%;
-    }
-    
-    .footer-links a {
-        display: block;
-        margin: 10px 0;
-    }
-}
-
-/* --- ESTILOS BASE DE BANJOSEO (Asegúrate de que estos existen o añádelos) --- */
-:root {
-    /* Colores primarios */
-    --color-dark-blue: #162234; /* Fondo de la barra lateral y principal */
-    --color-sidebar: #121A26; /* Fondo de la barra lateral (ligeramente diferente) */
-    --color-main-bg: #EAEFF4; /* Fondo del área de contenido principal */
-    --color-primary: #007bff; /* Azul primario para botones y enlaces */
-    --color-primary-dark: #0056b3;
-    --color-accent: #00bfff; /* Color de acento (azul claro) */
-    --color-text-light: #f5f5f5; /* Texto claro */
-    --color-text-dark: #1f2a37; /* Texto oscuro */
-    --color-card-bg: #ffffff; /* Fondo de tarjetas */
-    --color-dark-card: #1f2a37; /* Fondo de tarjetas en el modal */
-    --color-nav-active: #007bff; /* Color del elemento de navegación activo */
-    --color-border: #e0e0e0;
-}
-
-/* El CSS de tu página principal (sidebar, navbar, etc.) debe estar aquí. */
-
-/* --- ESTILOS DEL MODAL DE DEPÓSITO (Añadir al final de inicio.css) --- */
-
-/* 1. Fondo del Modal */
 .modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Posición fija para cubrir toda la ventana */
-    z-index: 1000; /* Siempre encima de todo */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
-    justify-content: center; /* Centrar el contenido horizontalmente */
-    align-items: center; /* Centrar el contenido verticalmente */
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
 }
-.modal-content .deposit-form .custom-select select option {
-    background-color: var(--color-dark-blue); /* Fondo oscuro consistente con el modal */
-    color: var(--color-text-light); /* Texto claro */
-    padding: 8px; /* Opcional: Para mejor espaciado */
-}
-/* 2. Contenedor del Formulario (El cuadro oscuro) */
+
 .modal-content {
-    background-color: var(--color-dark-blue); /* Color oscuro de BANJOSEO */
+    background-color: var(--color-dark-blue); 
     color: var(--color-text-light);
     border-radius: 12px;
     width: 90%;
-    max-width: 400px; /* Tamaño medio para un formulario modal */
+    max-width: 400px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-/* 3. Encabezado del Modal */
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -667,110 +304,11 @@ height: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.modal-title-group {
-    display: flex;
-    align-items: center;
-}
-
-.modal-icon {
-    font-size: 20px;
-    margin-right: 10px;
-    color: var(--color-accent); /* Color de acento para ícono */
-}
-
-.modal-header h2 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.close-button {
-    color: var(--color-text-light);
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.close-button:hover {
-    opacity: 1;
-}
-
-/* 4. Cuerpo y Contenido del Formulario */
 .modal-body {
     padding: 20px;
     flex-grow: 1;
 }
 
-.modal-back-link {
-    display: flex;
-    align-items: center;
-    color: var(--color-accent);
-    margin-bottom: 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.modal-back-link i {
-    margin-right: 8px;
-    font-size: 14px;
-}
-
-.deposit-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Estilo para los campos de selección (Moneda/Red) */
-.custom-select {
-    position: relative;
-    background-color: #27374b; /* Fondo más claro para los inputs/selects */
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    border: 1px solid #3e4c5f;
-    transition: border-color 0.2s;
-}
-
-.custom-select:hover {
-    border-color: var(--color-accent);
-}
-
-.custom-select select {
-    appearance: none; /* Ocultar el estilo nativo */
-    background: transparent;
-    border: none;
-    color: var(--color-text-light);
-    padding: 12px 0;
-    flex-grow: 1;
-    font-size: 16px;
-    cursor: pointer;
-    outline: none;
-}
-
-.select-arrow {
-    pointer-events: none;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.coin-icon {
-    font-size: 20px;
-    margin-right: 10px;
-    color: var(--color-accent);
-}
-
-/* Estilo para el campo de Dirección */
 .address-input-group {
     display: flex;
     background-color: #27374b;
@@ -783,7 +321,7 @@ height: 10px;
     flex-grow: 1;
     background: transparent;
     border: none;
-    color: var(--color-accent); /* Color de texto que resalta la dirección */
+    color: var(--color-accent);
     padding: 12px 10px;
     font-size: 14px;
     overflow: hidden;
@@ -792,20 +330,6 @@ height: 10px;
     outline: none;
 }
 
-.copy-button {
-    background-color: #3e4c5f; /* Botón de Copiar más oscuro */
-    color: var(--color-text-light);
-    border: none;
-    padding: 12px 15px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.copy-button:hover {
-    background-color: #516279;
-}
-
-/* 5. Código QR */
 .qr-code-container {
     display: flex;
     justify-content: center;
@@ -815,22 +339,165 @@ height: 10px;
 .qr-code {
     width: 180px;
     height: 180px;
-    background-color: var(--color-card-bg); /* Fondo blanco para el QR */
+    background-color: var(--color-card-bg);
     border-radius: 8px;
     padding: 10px;
 }
 
-/* 6. Pie de página del Modal (Punto de carga) */
-.modal-footer {
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* ================================================= */
+/* 🧩 MEDIA QUERY: Colapsar Sidebar y Navbar (Max 1024px) */
+/* ================================================= */
+
+@media (max-width: 1024px) {
+    /* 1. Sidebar Colapsado */
+    .sidebar {
+        width: 80px; /* Ancho colapsado */
+        padding: 15px 0;
+    }
+
+    .sidebar-header {
+        padding: 0 10px 20px;
+    }
+    
+    .banlogo {
+        width: 60px !important; /* Forzar tamaño del logo en colapsado */
+    }
+
+    /* 2. Ocultar Texto y Títulos */
+    .sidebar-nav ul li a span { /* Necesitas agregar el <span> al texto del enlace en tu HTML */
+        display: none;
+    }
+    .sidebar-nav ul li a {
+        justify-content: center; /* Centrar solo el ícono */
+        padding: 10px 0;
+    }
+    
+    .nav-section-title {
+        display: none;
+    }
+    
+    /* 3. Ajuste de Estilos Activos/Hover Colapsado */
+    .nav-item a i {
+        margin-right: 0;
+    }
+
+    .nav-item:hover a,
+    .nav-item.active a {
+        border-left: none;
+        /* Puedes usar border-bottom si quieres el indicador debajo del ícono */
+        border-bottom: 4px solid var(--color-secondary); 
+    }
+    .nav-item.active a {
+        padding-left: 0;
+    }
+    
+    /* 4. Navbar y Contenido */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar-right {
+        gap: 15px;
+    }
+
+    .promotions-section {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .footer-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-links a {
+        margin: 0 10px;
+    }
 }
 
-.loader-dot {
-    width: 8px;
-    height: 8px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
+
+/* ================================================= */
+/* 🧩 MEDIA QUERY: Vista Móvil (Max 600px) */
+/* ================================================= */
+
+@media (max-width: 600px) {
+    
+    /* 1. Ocultar Sidebar COMPLETAMENTE */
+    .sidebar {
+        display: none;
+    }
+    
+    /* 2. Navbar apilada y simplificada */
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .navbar-left {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .navbar-right {
+        width: 100%;
+        justify-content: space-around;
+        gap: 10px;
+    }
+    
+    /* Ocultar elementos de texto para ahorrar espacio */
+    .navbar-right .nav-link {
+        display: none; 
+    }
+    
+    .btn-primary {
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+    
+    /* 3. Relleno y distribución de secciones */
+    .promotions-section {
+        grid-template-columns: 1fr; /* Una columna para promociones */
+        padding: 15px;
+    }
+
+    .search-filter-section,
+    .featured-products-section {
+        padding: 0 15px 15px;
+    }
+
+    /* 4. Ajuste de Rejilla de Productos */
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    
+    /* 5. Footer apilado */
+    .footer-info {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    
+    .footer-links a {
+        margin: 5px 0;
+    }
+
+    /* 6. Modal a pantalla completa (Mejora la UX en móvil) */
+    .modal-content {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .modal {
+        align-items: flex-start; /* Asegura que el modal inicie arriba si es necesario */
+    }
 }
